@@ -11,12 +11,173 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="flex -wrap-1000 audit-form">
-    <div class="audit-form-cta -bg-primary2">
+<form class="-wrap-1000 audit-form" action="#">
+    <div class="audit-form-cta -bg-primary2 js-form-cta">
         <h2 class="title-sub-two -fg-secondary2">Find out the savings you could make in your facility</h2>
         <p class="quote -fg-secondary2">Take our simple 6 step Recycling Audit</p>
-        <button class="button button button-shimmer -bg-primary1">start audit</button>
+        <button class="button button button-shimmer -bg-primary1 js-start-form" onclick="showForm()" type="button">start audit</button>
     </div>
-</div>
+
+    <div class="audit-question js-form-slide">
+        <h2 class="audit-question__ttl title-sub-two -fg-secondary2">Choose which sector you operate in</h2>
+        <span class="validation-message is-hidden">Please choose at least one option</span>
+
+        <div class="choose-cards">
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="sector-offices">
+                <label for="sector-offices" class="choose-cards__label title-sub">Offices</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="sector-education">
+                <label for="sector-education" class="choose-cards__label title-sub">Education</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="travel">
+                <label for="travel" class="choose-cards__label title-sub">Travel & Entertainment Venues</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="sector-logistics">
+                <label for="sector-logistics" class="choose-cards__label title-sub">Logistics/ Manufacturing</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="healthcare">
+                <label for="healthcare" class="choose-cards__label title-sub">Healthcare</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="sectors-operate" id="sector-other">
+                <label for="sector-other" class="choose-cards__label title-sub">Other</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-question js-form-slide">
+        <p class="audit-question__sub-ttl ta-right quote -fg-secondary2">Depending on your selection for Q1 will determine the slider below</p>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">How many Employees <span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="100" value="50">
+                </div>
+                <span class="audit-slider-item__value ta-right">100+</span>
+            </div>
+        </div>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">Number of Students <span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="1000" value="0">
+                </div>
+                <span class="audit-slider-item__value ta-right">1000+</span>
+            </div>
+        </div>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">How many staff <span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="100" value="0">
+                </div>
+                <span class="audit-slider-item__value ta-right">100+</span>
+            </div>
+        </div>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">Football/number of visitors <span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="1000" value="0">
+                </div>
+                <span class="audit-slider-item__value ta-right">1000+</span>
+            </div>
+        </div>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">Number of beds <span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="500" value="0">
+                </div>
+                <span class="audit-slider-item__value ta-right">500+</span>
+            </div>
+        </div>
+
+        <div class="audit-slider">
+            <div class="audit-slider__ttl">Other<span class="audit-slider__range">0</span></div>
+
+            <div class="audit-slider-item">
+                <span class="audit-slider-item__value">0</span>
+                <div class="audit-range-slider">
+                    <input type="range" min="0" max="500" value="250">
+                </div>
+                <span class="audit-slider-item__value ta-right">500+</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-question js-form-slide">
+        <h2 class="audit-question__ttl title-sub-two -fg-secondary2">Number of external non-recyclable bin collection per week (i.e Gerneal waste, Lanfill, Waste to energy)</h2>
+        <span class="validation-message is-hidden">Please choose at least one option</span>
+
+        <div class="choose-cards__ttl">Internal</div>
+        <div class="choose-cards">
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="bins" id="bins-2">
+                <label for="bins-2" class="choose-cards__label title-sub">1-2</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="bins" id="bins-4">
+                <label for="bins-4" class="choose-cards__label title-sub">3-4</label>
+            </div>
+        </div>
+
+        <div class="choose-cards__ttl">External 1100L</div>
+        <div class="choose-cards">
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="bins" id="bins-8">
+                <label for="bins-8" class="choose-cards__label title-sub">4-8</label>
+            </div>
+            <div class="choose-cards__cell">
+                <input type="radio" class="choose-cards__radio" name="bins" id="bins-8+">
+                <label for="bins-8+" class="choose-cards__label title-sub">8+</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-question js-form-slide">
+        <h2 class="audit-question__ttl title-sub-two -fg-secondary2">What is you annual waste collection cost? <small>(*non mandatory)</small></h2>
+        <p class="right quote -fg-secondary2">*Excluding Clinical Waste for Healthcare</p>
+        <span class="validation-message is-hidden">Please enter annual waste collection cost</span>
+
+        <input type="text" class="audit-question__big-field" required>
+    </div>
+
+    <div class="audit-question__footer js-form-nav is-hidden">
+        <div class="audit-question__nav">
+            <div class="audit-question__steps-ttl">Question
+                <span class="js-current-step"></span>/<span class="js-total-step"></span>
+            </div>
+            <div class="audit-question__nav-item js-step-indicator">1</div>
+            <div class="audit-question__nav-item js-step-indicator">2</div>
+            <div class="audit-question__nav-item js-step-indicator">3</div>
+            <div class="audit-question__nav-item js-step-indicator">4</div>
+        </div>
+
+        <button class="button button button-shimmer -bg-primary1 js-next-btn" onclick="nextPrev(1)" type="button">Next</button>
+    </div>
+</form>
+
+<script src="js/main.js"></script>
 </body>
 </html>
